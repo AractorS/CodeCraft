@@ -86,9 +86,6 @@
         /* Removemos las propiedades de transformación y scroll */
     }
 
-
-
-
     .menu-btn i {
         font-size: 24px;
         color: #0e1217;
@@ -182,8 +179,29 @@
     .about-container {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
-        padding: 0 15px;
+        gap: 30px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .about-img {
+        position: relative;
+        width: 280px;        /* Tamaño fijo */
+        height: 280px;       /* Mismo tamaño que el ancho */
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;    /* Asegura que la imagen no se salga del círculo */
+    }
+
+    .about-img img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .services-container {
@@ -201,6 +219,129 @@
 
     .about-text h3 {
         font-size: 28px;
+    }
+
+    /* Skills Section */
+    .skills-container {
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .skill-category {
+        margin-bottom: 20px;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .skill-card {
+        width: 100%;
+        padding: 20px;
+        aspect-ratio: 1; /* Mantener forma cuadrada */
+    }
+
+    /* Contact Section */
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .contact-card {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background: rgba(14, 18, 23, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(74, 207, 238, 0.3);
+        gap: 15px;
+        overflow: hidden; /* Añadido para contener el texto */
+    }
+
+    .contact-card i {
+        font-size: 24px;
+        color: #4acfee;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%; /* Añadido para controlar el ancho */
+        overflow: hidden; /* Añadido para contener el texto */
+    }
+
+    .contact-details p {
+        white-space: nowrap; /* Evita saltos de línea */
+        overflow: hidden; /* Oculta el exceso */
+        text-overflow: ellipsis; /* Muestra ... si el texto es muy largo */
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+
+    .contact-details .email-list {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contact-details .email-list p {
+        font-size: 14px;
+        margin: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    /* Formulario */
+    #form {
+        width: 100%;
+        background: rgba(14, 18, 23, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid rgba(74, 207, 238, 0.3);
+    }
+
+    .field {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .field input,
+    .field textarea {
+        width: 100%;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(74, 207, 238, 0.3);
+        border-radius: 8px;
+        color: #fff;
+    }
+
+    #button {
+        width: 100%;
+        padding: 12px;
+        background: #4acfee;
+        color: #0e1217;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
 }
 
@@ -232,19 +373,24 @@
     }
 
     .about-img {
-        width: 320px;
-        height: 320px;
+        width: 100%;
+        max-width: 350px;
+        height: 100%;
+        margin: 0 auto;
     }
 
     .about-stats {
-        flex-direction: column;
-        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     /* Sección de contacto */
     .contact-container {
-        grid-template-columns: 1fr;
-        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
     }
 
     .contact-card {
@@ -422,6 +568,42 @@
         padding: 15px;
     }
 
+    .about-container {
+        padding: 15px;
+    }
+
+    .about-img {
+        width: 240px;    /* Más pequeño para móviles */
+        height: 240px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Skills Section - Grid para móviles */
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mantenemos 2 columnas */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .skill-card {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill-card i {
+        font-size: 24px;
+    }
+
+    .skill-card span {
+        font-size: 12px;
+        margin-top: 8px;
+        text-align: center;
+    }
+
     /* Carrusel y proyectos */
     .swiper-slide {
         width: 260px;
@@ -453,6 +635,64 @@
         padding: 6px 12px;
         font-size: 12px;
     }
+
+    /* Contact Section ajustes adicionales */
+    .contact-container {
+        padding: 10px;
+    }
+
+    .contact-card {
+        padding: 15px;
+    }
+
+    .contact-card i {
+        font-size: 20px;
+    }
+
+    .contact-details h3 {
+        font-size: 16px;
+    }
+
+    .contact-details p {
+        font-size: 12px; /* Reduce aún más el texto en móviles pequeños */
+    }
+
+    .contact-details .email-list p {
+        font-size: 12px;
+    }
+
+    #form {
+        padding: 20px;
+    }
+
+    .field {
+        margin-bottom: 15px;
+    }
+
+    .field label {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .field input,
+    .field textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .promo-tag {
+        padding: 6px 12px;
+        right: -5px;
+        top: -5px;
+    }
+
+    .promo-tag span {
+        font-size: 12px;
+    }
+
+    .promo-tag small {
+        font-size: 10px;
+    }
 }
 
 /* Móviles pequeños */
@@ -463,8 +703,10 @@
         height: 260px;
     }
 
-    .skill-grid {
-        grid-template-columns: 1fr;
+    .about-img {
+        width: 220px;    /* Aún más pequeño para dispositivos muy pequeños */
+        height: 220px;
+        max-width: 75%;
     }
 }
 

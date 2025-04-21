@@ -200,7 +200,7 @@ nav a.active {
 
 .ul-icons li{
     list-style: none;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .ul-icons a{
@@ -578,6 +578,8 @@ nav a.active {
 }
 
 .service-card {
+    position: auto;
+    z-index: 0;
     background: rgba(74, 207, 238, 0.05);
     border-radius: 30px;
     padding: 40px 30px;
@@ -585,8 +587,7 @@ nav a.active {
     border: 2px solid #4acfee;
     box-shadow: 0 0 15px rgba(74, 207, 238, 0.2);
     transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
     backdrop-filter: blur(10px);
 }
 
@@ -670,6 +671,8 @@ nav a.active {
     background: linear-gradient(45deg, #4acfee, #53f8c9);
     transition: all 0.4s ease;
     opacity: 0;
+    z-index: 2;
+    justify-content: center;
 }
 
 .service-card:hover .service-hover {
@@ -681,6 +684,50 @@ nav a.active {
     color: #0e1217;
     font-weight: 600;
     font-size: 16px;
+}
+
+.promo-tag {
+    position: absolute;
+    top: -35px;
+    right: -15px;
+    background: linear-gradient(45deg, #4acfee, #53f8c9);
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(74, 207, 238, 0.5);
+    z-index: 999;
+    transform: rotate(3deg);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: promoFloat 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes promoFloat {
+    0%, 100% {
+        transform: rotate(3deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(3deg) translateY(-8px);
+    }
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 480px) {
+    .promo-tag {
+        top: -20px;
+        right: -5px;
+        padding: 8px 15px;
+    }
+
+    .promo-tag span {
+        font-size: 14px;
+    }
+
+    .promo-tag small {
+        font-size: 11px;
+    }
 }
 
 /* Media Queries para Skills */

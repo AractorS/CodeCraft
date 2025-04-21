@@ -15,20 +15,20 @@ function showServiceDetails(serviceType) {
     const serviceInfo = {
         web: {
             title: 'Desarrollo Web',
-            description: 'Creamos sitios web profesionales y modernos que destacan tu marca.',
+            description: 'Creamos sitios web profesionales para tu negocio o crecimiento personal',
             features: [
                 'Diseño UX/UI personalizado',
                 'Optimización SEO',
                 'Integración con CMS',
-                'Análisis de rendimiento',
+                'Integración de Bases de Datos',
                 'Soporte técnico continuo'
             ]
         },
         app: {
-            title: 'Desarrollo de Apps',
-            description: 'Desarrollamos aplicaciones móviles nativas y multiplataforma.',
+            title: 'Desarrollo de Apps en Android',
+            description: 'Desarrollamos aplicaciones móviles que pueden llevar tu negocio al siguiente nivel.',
             features: [
-                'Desarrollo iOS y Android',
+                'Desarrollo con Android Studio',
                 'Diseño intuitivo',
                 'Integración con APIs',
                 'Notificaciones push',
@@ -48,13 +48,13 @@ function showServiceDetails(serviceType) {
         },
         consulting: {
             title: 'Consultoría IT',
-            description: 'Asesoramiento experto para optimizar tus sistemas.',
+            description: 'Asesoramiento para optimizar tus procesos tecnológicos.',
             features: [
                 'Auditoría de sistemas',
                 'Optimización de procesos',
                 'Seguridad informática',
                 'Planes estratégicos',
-                'Capacitación'
+                'Capacitación hardware y software'
             ]
         }
     };
