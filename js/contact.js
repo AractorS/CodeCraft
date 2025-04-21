@@ -1,5 +1,5 @@
 // Inicializar EmailJS
-emailjs.init('-xFrgAlYwMRpRTd1P');
+emailjs.init('sV93wj8YDUm-sbc8l');
 
 const btn = document.getElementById('button');
 
@@ -57,18 +57,18 @@ document.getElementById('form')
         btn.disabled = true;
 
         const serviceID = 'default_service';
-        const templateID = 'template_eoucwl4';
+        const templateID = 'template_kbfn0x1';
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                btn.value = 'Send Email';
+                btn.value = 'Enviar Mensaje';
                 btn.disabled = false;
                 showToast('¡Mensaje enviado exitosamente!');
                 this.reset();
             }, (err) => {
-                btn.value = 'Send Email';
+                btn.value = 'Enviar Mensaje';
                 btn.disabled = false;
                 showToast('Error al enviar el mensaje. Por favor, intente nuevamente.', true);
                 console.error('Error:', err);
             });
-    }); 
+    });
