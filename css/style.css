@@ -184,6 +184,7 @@ nav a.active {
     cursor: pointer;
     transition: 0.3s;
     text-wrap: nowrap;
+    text-decoration: none;
 }
 
 .btn:hover{
@@ -561,6 +562,127 @@ nav a.active {
     font-weight: bold;
 }
 
+.project-card {
+    margin: 0 20px;
+    height: 380px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: rgba(74, 207, 238, 0.05);
+    border-radius: 30px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 2px solid #4acfee;
+    box-shadow: 0 0 15px rgba(74, 207, 238, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #53f8c9;
+    box-shadow: 0 0 30px rgba(74, 207, 238, 0.4);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(74, 207, 238, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.4s ease;
+    border: 2px solid #4acfee;
+}
+
+.service-icon i {
+    font-size: 40px;
+    color: #4acfee;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    background: linear-gradient(45deg, #4acfee, #53f8c9);
+    border-color: transparent;
+}
+
+.service-card:hover .service-icon i {
+    color: #0e1217;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #4acfee, #53f8c9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-card p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.service-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.service-features li i {
+    color: #4acfee;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.service-hover {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #4acfee, #53f8c9);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.service-card:hover .service-hover {
+    bottom: 0;
+    opacity: 1;
+}
+
+.learn-more {
+    color: #0e1217;
+    font-weight: 600;
+    font-size: 16px;
+}
+
 /* Media Queries para Skills */
 @media (max-width: 1200px) {
     .hero-img {
@@ -663,6 +785,47 @@ nav a.active {
     .about-text h3 {
         font-size: 28px;
     }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-card {
+        padding: 25px;
+    }
+
+    #form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: 280px;
+    }
+
+    .project-card {
+        height: 400px;
+    }
+
+    .project-img {
+        height: 180px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -713,6 +876,83 @@ nav a.active {
     .about-text p {
         font-size: 16px;
         margin-bottom: 30px;
+    }
+
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-card {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .contact-card i {
+        font-size: 28px;
+    }
+
+    .contact-details h3 {
+        font-size: 18px;
+    }
+
+    .contact-details p {
+        font-size: 14px;
+    }
+
+    #form {
+        padding: 25px;
+    }
+
+    .field {
+        margin-bottom: 25px;
+    }
+
+    .field label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .field input[type="text"],
+    .field input[type="email"] {
+        padding: 12px 15px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    #button {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+
+    .swiper-slide {
+        width: 260px;
+    }
+
+    .project-card {
+        height: 380px;
+    }
+
+    .project-img {
+        height: 160px;
+    }
+
+    .project-info {
+        padding: 15px;
+    }
+
+    .project-info h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .project-info p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .project-tech span {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 
@@ -989,6 +1229,77 @@ footer {
     }
 }
 
+/* Toast Notifications */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(14, 18, 23, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(74, 207, 238, 0.2);
+    font-size: 15px;
+    font-weight: 500;
+    z-index: 9999;
+    min-width: 300px;
+    text-align: center;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: toastIn 0.5s ease forwards;
+}
+
+.toast-notification.success {
+    border-left: 4px solid #4acfee;
+}
+
+.toast-notification.error {
+    border-left: 4px solid #ff4444;
+}
+
+.toast-notification i {
+    font-size: 20px;
+}
+
+.toast-notification.success i {
+    color: #4acfee;
+}
+
+.toast-notification.error i {
+    color: #ff4444;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+}
+
+.toast-notification.hide {
+    animation: toastOut 0.5s ease forwards;
+}
+
 /* Contact Section */
 .contact-container {
     display: grid;
@@ -1001,7 +1312,7 @@ footer {
 
 .contact-info {
     display: flex;
-        flex-direction: column;
+    flex-direction: column;
     gap: 25px;
 }
 
@@ -1010,7 +1321,7 @@ footer {
     padding: 30px;
     border-radius: 20px;
     display: flex;
-        align-items: center;
+    align-items: center;
     gap: 25px;
     border: 2px solid #4acfee;
     box-shadow: 0 0 15px rgba(74, 207, 238, 0.2);
@@ -1073,7 +1384,9 @@ footer {
 }
 
 .field input[type="text"],
-.field input[type="email"] {
+.field input[type="email"],
+.field input[type="title"],
+.field textarea {
     width: 100%;
     padding: 15px 20px;
     background: rgba(74, 207, 238, 0.1);
@@ -1085,7 +1398,9 @@ footer {
 }
 
 .field input[type="text"]:focus,
-.field input[type="email"]:focus {
+.field input[type="email"]:focus,
+.field input[type="title"]:focus,
+.field textarea:focus {
     outline: none;
     border-color: #53f8c9;
     box-shadow: 0 0 20px rgba(83, 248, 201, 0.3);
@@ -1093,8 +1408,16 @@ footer {
 }
 
 .field input[type="text"]::placeholder,
-.field input[type="email"]::placeholder {
+.field input[type="email"]::placeholder,
+.field input[type="title"]::placeholder,
+.field textarea::placeholder {
     color: rgba(255, 255, 255, 0.5);
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #button {
@@ -1122,67 +1445,4 @@ footer {
 
 #button:active {
     transform: translateY(0);
-}
-
-@media (max-width: 980px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .contact-card {
-        padding: 25px;
-    }
-
-    #form {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-container {
-        padding: 15px;
-    }
-
-    .contact-card {
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .contact-card i {
-        font-size: 28px;
-    }
-
-    .contact-details h3 {
-        font-size: 18px;
-    }
-
-    .contact-details p {
-        font-size: 14px;
-    }
-
-    #form {
-        padding: 25px;
-    }
-
-    .field {
-        margin-bottom: 25px;
-    }
-
-    .field label {
-        font-size: 14px;
-        margin-bottom: 8px;
-    }
-
-    .field input[type="text"],
-    .field input[type="email"] {
-        padding: 12px 15px;
-        font-size: 14px;
-        border-radius: 12px;
-    }
-
-    #button {
-        padding: 14px 30px;
-        font-size: 14px;
-    }
 }

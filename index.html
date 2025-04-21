@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#0e1217">
-  <title>CodeCraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTAFOLIO CODECRAFT SOLUTIONS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,24 +18,13 @@
     <source src="imagenes/galaxy.mp4" type="video/mp4">
   </video>
 
-  <!-- Menú móvil -->
-  <div class="menu-btn">
-    <i class='bx bx-menu'></i>
-  </div>
-  <ul class="menu-list">
-    <li><a href="#home">Inicio</a></li>
-    <li><a href="#about">Acerca de</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#skills">Habilidades</a></li>
-    <li><a href="#contact">Contacto</a></li>
-  </ul>
-
   <!-- Hero Section -->
   <section id="home" class="hero-section">
-    <nav class="desktop-nav">
-      <h1 data-aos="zoom-in" data-aos-duration="1000">
-        <span style="color: #4acfee;">codecraft</span> solutions
-      </h1>
+    <nav>
+      <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">codecraft</span>solutions</h1>
+      <div class="menu-btn">
+        <i class='bx bx-menu'></i>
+      </div>
       <ul>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#home">Inicio</a></li>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">Acerca de</a></li>
@@ -48,12 +36,13 @@
 
     <div class="hero">
       <div class="hero-info">
-        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">Somos CodeCraft Solutions</h1>
-        <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">Desarrolladores</h2>
-        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">¡Bienvenido a CodeCraft Solutions! Tenemos la capacidad de transformar
-          tus ideas en proyectos exitosos pues tu éxito es nuestra misión.</p>
+        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">Hi, I'm codecraftsolutions</h1>
+        <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">I'm a Developer</h2>
+        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">¡Bienvenido a CodeCraftSolutions! Transformamos tus ideas en soluciones digitales innovadoras, 
+          modernas y funcionales. Estamos aquí para impulsar tu proyecto y llevarlo al siguiente nivel..
+          Tu éxito es nuestra misión.</p>
         <div class="Buttons">
-          <a href="#contact" class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1100">Contrátanos</a> 
+          <button class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1100">Hire me</button> 
           <ul class="ul-icons">
             <li><a href="https://github.com/jeanalexandre" target="_blank" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200"><i class='bx bxl-github'></i></a></li>
             <li><a href="https://wa.me/593963158460" target="_blank" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1300"><i class='bx bxl-whatsapp'></i></a></li>
@@ -106,7 +95,6 @@
       </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services">
       <div class="section-content">
         <h2 class="section-title"><span>Nuestros</span> Servicios</h2>
@@ -423,31 +411,60 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
-    emailjs.init('sV93wj8YDUm-sbc8l')
+    emailjs.init('-xFrgAlYwMRpRTd1P')
   </script>
   <script src="js/contact.js"></script>
-  <script src="js/services.js"></script>
   <script>
     AOS.init();
 
     // Variables para la navegación
     const menuBtn = document.querySelector('.menu-btn');
-    const mobileMenu = document.querySelector('.menu-list');
+    const navMenu = document.querySelector('nav ul');
     const menuIcon = document.querySelector('.menu-btn i');
-    const navLinks = document.querySelectorAll('.menu-list a');
-    const nav = document.querySelector('.desktop-nav');
+    const navLinks = document.querySelectorAll('nav a');
 
-    // Función para manejar el scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
+    // Toggle menú móvil
+    menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuIcon.classList.toggle('bx-x');
+        menuIcon.classList.toggle('bx-menu');
+    });
+
+    // Prevenir deslizamiento en todo momento
+    document.addEventListener('touchstart', e => {
+        if (e.touches[0].clientX > window.innerWidth * 0.8) {
+            e.preventDefault();
         }
-        
-        // Actualizar enlace activo
+    }, { passive: false });
+
+    document.addEventListener('touchmove', e => {
+        if (e.touches[0].clientX > window.innerWidth * 0.8) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Cerrar menú al hacer click en un enlace
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuIcon.classList.remove('bx-x');
+            menuIcon.classList.add('bx-menu');
+        });
+    });
+
+    // Cerrar menú al hacer click fuera de él
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuIcon.classList.remove('bx-x');
+            menuIcon.classList.add('bx-menu');
+        }
+    });
+
+    // Actualizar enlace activo al hacer scroll
+    window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-        const navHeight = nav.offsetHeight;
+        const navHeight = document.querySelector('nav').offsetHeight;
         
         document.querySelectorAll('section').forEach(section => {
             const sectionTop = section.offsetTop - navHeight - 10;
@@ -463,37 +480,6 @@
                 });
             }
         });
-    });
-
-    // Toggle menú móvil
-    menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        mobileMenu.classList.toggle('active');
-        menuIcon.classList.toggle('bx-x');
-        menuIcon.classList.toggle('bx-menu');
-    });
-
-    // Cerrar menú al hacer click en un enlace
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
-            menuIcon.classList.add('bx-menu');
-        });
-    });
-
-    // Cerrar menú al hacer click fuera de él
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
-            menuIcon.classList.add('bx-menu');
-        }
-    });
-
-    // Prevenir que los clicks dentro del menú lo cierren
-    mobileMenu.addEventListener('click', (e) => {
-        e.stopPropagation();
     });
 
     // Inicialización de Swiper
