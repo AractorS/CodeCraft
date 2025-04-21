@@ -78,7 +78,13 @@
     }
 
     nav {
-        padding: 20px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        margin: 0;
+        background: rgba(14, 18, 23, 0.95);
     }
 
     nav h1 {
@@ -88,6 +94,7 @@
 
     .menu-btn {
         display: block;
+        font-size: 24px;
         z-index: 1002;
         position: relative;
     }
@@ -99,12 +106,12 @@
         width: 80%;
         height: 100vh;
         background: rgba(14, 18, 23, 0.95);
-        backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: 0.3s ease-in-out;
         gap: 30px;
+        padding-top: 80px;
         z-index: 1001;
     }
 
@@ -113,10 +120,9 @@
     }
 
     nav a {
-        font-size: 18px;
-        padding: 12px 30px;
-        display: block;
-        width: 200px;
+        font-size: 16px;
+        padding: 10px 25px;
+        width: 180px;
         text-align: center;
     }
 
@@ -262,6 +268,32 @@
     .service-features li {
         font-size: 14px;
     }
+
+    .swiper-slide {
+        width: 280px;
+    }
+
+    .project-card {
+        height: 400px;
+    }
+
+    .project-img {
+        height: 180px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -269,22 +301,29 @@
         width: 100%;
         margin: 0;
         border-radius: 0;
-        padding: 20px;
+        padding: 15px;
     }
 
     .main-content {
         width: 100%;
         border-radius: 0;
-        padding: 20px;
-        margin: 20px auto;
+        padding: 15px;
+        margin: 15px auto;
     }
 
     .section-content {
-        padding: 0 15px;
+        padding: 0 10px;
     }
 
     nav {
-        padding: 15px 20px;
+        padding: 12px 15px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        margin: 0;
+        background: rgba(14, 18, 23, 0.95);
     }
 
     nav h1 {
@@ -297,18 +336,16 @@
 
     nav ul {
         width: 100%;
-        padding-top: 80px;
-        padding: 80px 20px;
+        padding: 70px 15px;
     }
 
     nav a {
-        font-size: 16px;
-        padding: 10px 25px;
-        width: 180px;
+        font-size: 15px;
+        padding: 8px 20px;
     }
 
     .hero {
-        padding: 20px;
+        padding: 15px 10px;
     }
 
     .hero-img {
@@ -338,47 +375,58 @@
     }
 
     .project-card {
-        height: auto;
+        height: 380px;
     }
 
+    .project-img {
+        height: 160px;
+    }
+
+    .project-info {
+        padding: 15px;
+    }
+
+    .project-info h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .project-info p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .project-tech span {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .service-card {
+        padding: 20px 15px;
+    }
+
+    .skills-container,
+    .about-container,
     .contact-container {
         padding: 10px;
     }
 
     #form {
-        padding: 25px 20px;
+        padding: 20px 15px;
     }
 
-    .services-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 15px;
-    }
-
-    .skills-container {
-        padding: 15px;
-    }
-
-    .about-container {
-        padding: 15px;
-    }
-
-    .footer-content {
-        padding: 0 20px;
-    }
-
-    .service-card {
-        padding: 25px 15px;
-    }
-
-    .service-icon {
-        width: 60px;
-        height: 60px;
+    .field {
         margin-bottom: 20px;
     }
 
-    .service-icon i {
-        font-size: 30px;
+    .footer-content {
+        padding: 0 15px;
     }
 }
 
@@ -396,6 +444,25 @@
 
     .skill-grid {
         grid-template-columns: 1fr;
+    }
+
+    .section-content {
+        padding: 0 8px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    .services-container,
+    .skills-container,
+    .about-container,
+    .contact-container {
+        padding: 8px;
+    }
+
+    #form {
+        padding: 15px 12px;
     }
 }
 
@@ -424,67 +491,5 @@
     .hero-img {
         width: 280px;
         height: 280px;
-    }
-}
-
-/* Media queries para el carrusel */
-@media (max-width: 768px) {
-    .swiper-slide {
-        width: 280px;
-    }
-
-    .project-card {
-        height: 400px;
-    }
-
-    .project-img {
-        height: 180px;
-    }
-
-    .project-info {
-        padding: 20px;
-    }
-
-    .project-info h3 {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-
-    .project-info p {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .swiper-slide {
-        width: 260px;
-    }
-
-    .project-card {
-        height: 380px;
-    }
-
-    .project-img {
-        height: 160px;
-    }
-
-    .project-info {
-        padding: 15px;
-    }
-
-    .project-info h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .project-info p {
-        font-size: 13px;
-        margin-bottom: 12px;
-    }
-
-    .project-tech span {
-        padding: 6px 12px;
-        font-size: 12px;
     }
 }

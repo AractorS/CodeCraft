@@ -38,11 +38,11 @@ body{
 /* Hero Section */
 .hero-section {
     width: 90%;
-    height: 90vh;
-    margin: 30px auto;
+    height: 85vh;
+    margin: 20px auto;
     background-color: #4ad0ee1b;
     backdrop-filter: blur(10px);
-    border-radius: 50px;
+    border-radius: 30px;
     box-shadow: 5px 5px 20px 1px #4acfee;
     overflow: hidden;
     position: relative;
@@ -62,15 +62,29 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
-    position: relative;
-    width: 100%;
+    padding: 20px 30px;
+    position: fixed;
+    width: 90%;
     z-index: 1002;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(14, 18, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(74, 207, 238, 0.2);
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    padding: 15px 30px;
+    background: rgba(14, 18, 23, 0.95);
+    border: 1px solid #4acfee;
 }
 
 nav h1 {
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 900;
     text-transform: lowercase;
 }
@@ -89,10 +103,10 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     transition: 0.2s;
-    padding: 8px 25px;
+    padding: 6px 20px;
     border-radius: 30px;
 }
 
@@ -136,6 +150,7 @@ nav a.active {
     padding: 0 10%;
     color: white;
     justify-content: space-between;
+    padding-top: 100px;
 }
 
 .hero-info {
@@ -143,12 +158,12 @@ nav a.active {
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 48px;
 }
 
 .hero h2{
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 24px;
     text-transform: uppercase;
     background: linear-gradient(to right, #4acfee, #53f8c9, #6070fd, #5bbdff, #4acfee);
     background-size: 200%;
@@ -227,8 +242,8 @@ nav a.active {
 }
 
 .hero-img {
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
     background-color: transparent;
     position: relative;
     border-radius: 50%;
@@ -249,8 +264,8 @@ nav a.active {
 /* Contenedor principal para todas las secciones excepto hero */
 .main-content {
     width: 90%;
-    margin: 100px auto;
-    padding: 60px;
+    margin: 60px auto;
+    padding: 40px;
     background-color: #4ad0ee1b;
     backdrop-filter: blur(10px);
     border-radius: 50px;
@@ -259,7 +274,7 @@ nav a.active {
 
 /* Estilos para las secciones dentro del contenedor principal */
 .section-content {
-    margin: 0 0 120px 0;
+    margin: 0 0 80px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,8 +326,8 @@ nav a.active {
 }
 
 .about-img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 20px #4acfee;
@@ -337,7 +352,7 @@ nav a.active {
 }
 
 .about-text h3 {
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 20px;
     background: linear-gradient(to right, #4acfee, #53f8c9);
     background-clip: text;
@@ -346,8 +361,8 @@ nav a.active {
 }
 
 .about-text p {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 16px;
+    margin-bottom: 30px;
     line-height: 1.6;
 }
 
@@ -358,7 +373,7 @@ nav a.active {
 
 .stat-card {
     background: rgba(74, 207, 238, 0.1);
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
     text-align: center;
     border: 2px solid #4acfee;
@@ -366,7 +381,7 @@ nav a.active {
 }
 
 .stat-card h1 {
-    font-size: 40px;
+    font-size: 32px;
     color: #4acfee;
     margin-bottom: 10px;
 }
@@ -696,7 +711,7 @@ nav a.active {
 
 .contact-card {
     background: rgba(74, 207, 238, 0.1);
-    padding: 30px;
+    padding: 25px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -714,7 +729,7 @@ nav a.active {
 }
 
 .contact-card i {
-    font-size: 35px;
+    font-size: 28px;
     color: #4acfee;
     transition: all 0.3s ease;
 }
@@ -727,19 +742,19 @@ nav a.active {
 .contact-details h3 {
     color: #4acfee;
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .contact-details p {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     opacity: 0.9;
 }
 
 #form {
     background: rgba(74, 207, 238, 0.05);
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     border: 2px solid #4acfee;
     box-shadow: 0 0 20px rgba(74, 207, 238, 0.2);
@@ -888,7 +903,7 @@ footer {
 .service-card {
     background: rgba(74, 207, 238, 0.05);
     border-radius: 30px;
-    padding: 40px 30px;
+    padding: 30px 20px;
     text-align: center;
     border: 2px solid #4acfee;
     box-shadow: 0 0 15px rgba(74, 207, 238, 0.2);
@@ -905,20 +920,20 @@ footer {
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: rgba(74, 207, 238, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
     transition: all 0.4s ease;
     border: 2px solid #4acfee;
 }
 
 .service-icon i {
-    font-size: 40px;
+    font-size: 30px;
     color: #4acfee;
     transition: all 0.4s ease;
 }
@@ -933,7 +948,7 @@ footer {
 }
 
 .service-card h3 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 15px;
     background: linear-gradient(to right, #4acfee, #53f8c9);
     background-clip: text;
@@ -943,7 +958,7 @@ footer {
 
 .service-card p {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 25px;
     opacity: 0.8;
@@ -958,9 +973,9 @@ footer {
 .service-features li {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .service-features li i {

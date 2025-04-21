@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#0e1217">
   <title>CodeCraft</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -424,6 +424,35 @@
     const navMenu = document.querySelector('nav ul');
     const menuIcon = document.querySelector('.menu-btn i');
     const navLinks = document.querySelectorAll('nav a');
+    const nav = document.querySelector('nav');
+
+    // Función para manejar el scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+        
+        // Actualizar enlace activo
+        const scrollPosition = window.scrollY;
+        const navHeight = nav.offsetHeight;
+        
+        document.querySelectorAll('section').forEach(section => {
+            const sectionTop = section.offsetTop - navHeight - 10;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                const currentId = section.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    });
 
     // Toggle menú móvil
     menuBtn.addEventListener('click', (e) => {
@@ -454,27 +483,6 @@
     // Prevenir que los clicks dentro del menú lo cierren
     navMenu.addEventListener('click', (e) => {
         e.stopPropagation();
-    });
-
-    // Actualizar enlace activo al hacer scroll
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        const navHeight = document.querySelector('nav').offsetHeight;
-        
-        document.querySelectorAll('section').forEach(section => {
-            const sectionTop = section.offsetTop - navHeight - 10;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                const currentId = section.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + currentId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
     });
 
     // Inicialización de Swiper
