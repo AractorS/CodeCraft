@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e1217">
   <title>CodeCraft</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,28 +19,24 @@
     <source src="imagenes/galaxy.mp4" type="video/mp4">
   </video>
 
-  <!-- Menú móvil independiente -->
-  <aside class="mobile-menu">
-    <div class="menu-btn">
-      <i class='bx bx-menu'></i>
-    </div>
-    <ul class="menu-list">
-      <li><a href="#home">Inicio</a></li>
-      <li><a href="#about">Acerca de</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </aside>
+  <!-- Menú móvil -->
+  <div class="menu-btn">
+    <i class='bx bx-menu'></i>
+  </div>
+  <ul class="menu-list">
+    <li><a href="#home">Inicio</a></li>
+    <li><a href="#about">Acerca de</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <li><a href="#skills">Habilidades</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
 
   <!-- Hero Section -->
   <section id="home" class="hero-section">
-    <div class="logo">
+    <nav class="desktop-nav">
       <h1 data-aos="zoom-in" data-aos-duration="1000">
         <span style="color: #4acfee;">codecraft</span> solutions
       </h1>
-    </div>
-    <nav>
       <ul>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#home">Inicio</a></li>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">Acerca de</a></li>
@@ -436,11 +432,10 @@
 
     // Variables para la navegación
     const menuBtn = document.querySelector('.menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuList = document.querySelector('.menu-list');
+    const mobileMenu = document.querySelector('.menu-list');
     const menuIcon = document.querySelector('.menu-btn i');
     const navLinks = document.querySelectorAll('.menu-list a');
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('.desktop-nav');
 
     // Función para manejar el scroll
     window.addEventListener('scroll', () => {
