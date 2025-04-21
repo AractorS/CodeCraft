@@ -426,24 +426,12 @@
     const navLinks = document.querySelectorAll('nav a');
 
     // Toggle menú móvil
-    menuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
         menuIcon.classList.toggle('bx-x');
         menuIcon.classList.toggle('bx-menu');
     });
-
-    // Prevenir deslizamiento en todo momento
-    document.addEventListener('touchstart', e => {
-        if (e.touches[0].clientX > window.innerWidth * 0.8) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    document.addEventListener('touchmove', e => {
-        if (e.touches[0].clientX > window.innerWidth * 0.8) {
-            e.preventDefault();
-        }
-    }, { passive: false });
 
     // Cerrar menú al hacer click en un enlace
     navLinks.forEach(link => {
@@ -456,11 +444,16 @@
 
     // Cerrar menú al hacer click fuera de él
     document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target) && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             menuIcon.classList.remove('bx-x');
             menuIcon.classList.add('bx-menu');
         }
+    });
+
+    // Prevenir que los clicks dentro del menú lo cierren
+    navMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 
     // Actualizar enlace activo al hacer scroll

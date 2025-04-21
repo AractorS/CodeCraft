@@ -269,13 +269,46 @@
         width: 100%;
         margin: 0;
         border-radius: 0;
+        padding: 20px;
     }
 
     .main-content {
         width: 100%;
         border-radius: 0;
         padding: 20px;
-        margin: 40px auto;
+        margin: 20px auto;
+    }
+
+    .section-content {
+        padding: 0 15px;
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav h1 {
+        font-size: 20px;
+    }
+
+    .menu-btn {
+        font-size: 22px;
+    }
+
+    nav ul {
+        width: 100%;
+        padding-top: 80px;
+        padding: 80px 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px 25px;
+        width: 180px;
+    }
+
+    .hero {
+        padding: 20px;
     }
 
     .hero-img {
@@ -308,37 +341,30 @@
         height: auto;
     }
 
-    nav {
-        padding: 15px;
+    .contact-container {
+        padding: 10px;
     }
 
-    nav h1 {
-        font-size: 20px;
-    }
-
-    .menu-btn {
-        font-size: 22px;
-    }
-
-    nav ul {
-        width: 100%;
-        padding-top: 80px;
-    }
-
-    nav a {
-        font-size: 16px;
-        padding: 10px 25px;
-        width: 180px;
-    }
-
-    .field textarea {
-        min-height: 80px;
+    #form {
+        padding: 25px 20px;
     }
 
     .services-container {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 10px;
+        padding: 15px;
+    }
+
+    .skills-container {
+        padding: 15px;
+    }
+
+    .about-container {
+        padding: 15px;
+    }
+
+    .footer-content {
+        padding: 0 20px;
     }
 
     .service-card {
