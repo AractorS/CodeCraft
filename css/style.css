@@ -8,9 +8,15 @@
     scroll-behavior: smooth;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 body{
     position: relative;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     background-color: #0e1217;
     color: white;
