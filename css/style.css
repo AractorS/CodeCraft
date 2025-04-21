@@ -10,18 +10,17 @@
 }
 
 html, body {
-    overflow-x: hidden;
+    max-width: 100%;
     width: 100%;
+    overflow-x: hidden;
     position: relative;
 }
 
 body{
     position: relative;
-    width: 100%;
     min-height: 100vh;
     background-color: #0e1217;
     color: white;
-    overflow-x: hidden;
 }
 
 .back-vid{
@@ -32,6 +31,8 @@ body{
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    touch-action: none;
+    pointer-events: none;
 }
 
 /* Hero Section */
