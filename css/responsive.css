@@ -48,16 +48,17 @@
 }
 
 @media (max-width: 980px) {
-    body, html {
-        width: 100%;
+    body {
         overflow-x: hidden;
-        max-width: 100%;
+        width: 100%;
+        position: relative;
     }
 
     .desktop-nav {
         display: none;
     }
 
+    /* Menú móvil */
     .menu-btn {
         position: fixed;
         top: 35%;
@@ -70,7 +71,7 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        width: auto;
+        box-shadow: -2px 0 10px rgba(74, 207, 238, 0.3);
     }
 
     .menu-btn i {
@@ -92,6 +93,7 @@
         align-items: center;
         transition: 0.3s ease-in-out;
         z-index: 9998;
+        gap: 20px;
     }
 
     .menu-list.active {
@@ -135,8 +137,6 @@
         overflow: hidden;
         min-height: 100vh;
         height: auto;
-        margin: 15px auto;
-        border-radius: 30px;
         padding: 20px;
     }
 
@@ -199,7 +199,7 @@
 @media (max-width: 768px) {
     .main-content {
         padding: 30px;
-        margin: 60px auto;
+        margin: 30px auto;
     }
 
     .hero h1 {
@@ -333,6 +333,7 @@
 
     .project-info h3 {
         font-size: 20px;
+    }
 
     .project-info p {
         font-size: 14px;
@@ -341,30 +342,24 @@
 }
 
 @media (max-width: 480px) {
-    body {
+    .hero-section {
         width: 100%;
-        overflow-x: hidden;
-        position: relative;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+        overflow: hidden;
     }
-
+    
+    .main-content {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+        overflow: hidden;
+    }
+    
     .menu-list {
         width: 100%;
-    }
-
-    .hero-section {
-        width: 100vw;
-        margin: 0;
-        border-radius: 0;
-        padding: 20px;
-        overflow: hidden;
-    }
-
-    .main-content {
-        width: 100vw;
-        margin: 0;
-        border-radius: 0;
-        padding: 20px;
-        overflow: hidden;
     }
 
     .section-content {
@@ -372,7 +367,7 @@
     }
 
     .hero {
-        padding: 80px 20px 20px 20px;
+        padding: 60px 20px 20px 20px;
     }
 
     .hero-img {
@@ -533,4 +528,3 @@
         height: 280px;
     }
 }
-    }
