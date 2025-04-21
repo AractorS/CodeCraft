@@ -19,13 +19,28 @@
     <source src="imagenes/galaxy.mp4" type="video/mp4">
   </video>
 
+  <!-- Menú móvil independiente -->
+  <aside class="mobile-menu">
+    <div class="menu-btn">
+      <i class='bx bx-menu'></i>
+    </div>
+    <ul class="menu-list">
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#about">Acerca de</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </aside>
+
   <!-- Hero Section -->
   <section id="home" class="hero-section">
+    <div class="logo">
+      <h1 data-aos="zoom-in" data-aos-duration="1000">
+        <span style="color: #4acfee;">codecraft</span> solutions
+      </h1>
+    </div>
     <nav>
-      <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">codecraft</span> solutions</h1>
-      <div class="menu-btn">
-        <i class='bx bx-menu'></i>
-      </div>
       <ul>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#home">Inicio</a></li>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">Acerca de</a></li>
@@ -421,9 +436,10 @@
 
     // Variables para la navegación
     const menuBtn = document.querySelector('.menu-btn');
-    const navMenu = document.querySelector('nav ul');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuList = document.querySelector('.menu-list');
     const menuIcon = document.querySelector('.menu-btn i');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('.menu-list a');
     const nav = document.querySelector('nav');
 
     // Función para manejar el scroll
@@ -457,7 +473,7 @@
     // Toggle menú móvil
     menuBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        navMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
         menuIcon.classList.toggle('bx-x');
         menuIcon.classList.toggle('bx-menu');
     });
@@ -465,7 +481,7 @@
     // Cerrar menú al hacer click en un enlace
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
             menuIcon.classList.remove('bx-x');
             menuIcon.classList.add('bx-menu');
         });
@@ -473,15 +489,15 @@
 
     // Cerrar menú al hacer click fuera de él
     document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target) && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
             menuIcon.classList.remove('bx-x');
             menuIcon.classList.add('bx-menu');
         }
     });
 
     // Prevenir que los clicks dentro del menú lo cierren
-    navMenu.addEventListener('click', (e) => {
+    mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 

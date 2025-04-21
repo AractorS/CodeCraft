@@ -48,6 +48,25 @@ body{
     position: relative;
 }
 
+/* Menú móvil */
+.mobile-menu {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    .mobile-menu {
+        display: block;
+    }
+    
+    .menu-btn {
+        display: flex;
+    }
+}
+
 /* Menu móvil */
 .menu-btn {
     display: none;
