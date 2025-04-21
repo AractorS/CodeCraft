@@ -13,26 +13,28 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+<div class="menu-btn">
+  <i class='bx bx-menu'></i>
+</div>
+
+<nav>
+  <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">codecraft</span>solutions</h1>
+  <ul>
+    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#home">Inicio</a></li>
+    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">Acerca de</a></li>
+    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#projects">Proyectos</a></li>
+    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#skills">Habilidades</a></li>
+    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#contact">Contacto</a></li>
+  </ul>
+</nav>
 <body>
+
   <video autoplay loop muted plays-inline class="back-vid">
     <source src="imagenes/galaxy.mp4" type="video/mp4">
   </video>
 
   <!-- Hero Section -->
   <section id="home" class="hero-section">
-    <nav>
-      <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">codecraft</span>solutions</h1>
-      <div class="menu-btn">
-        <i class='bx bx-menu'></i>
-      </div>
-      <ul>
-        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#home">Inicio</a></li>
-        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">Acerca de</a></li>
-        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#projects">Proyectos</a></li>
-        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#skills">Habilidades</a></li>
-        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
 
     <div class="hero">
       <div class="hero-info">
@@ -414,72 +416,51 @@
     emailjs.init('-xFrgAlYwMRpRTd1P')
   </script>
   <script src="js/contact.js"></script>
+  <script src="js/services.js"></script>
   <script>
     AOS.init();
 
-    // Variables para la navegación
     const menuBtn = document.querySelector('.menu-btn');
     const navMenu = document.querySelector('nav ul');
     const menuIcon = document.querySelector('.menu-btn i');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('nav ul li');
+    const navTitle = document.querySelector('nav h1');
 
-    // Toggle menú móvil
     menuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         menuIcon.classList.toggle('bx-x');
         menuIcon.classList.toggle('bx-menu');
-    });
-
-    // Prevenir deslizamiento en todo momento
-    document.addEventListener('touchstart', e => {
-        if (e.touches[0].clientX > window.innerWidth * 0.8) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    document.addEventListener('touchmove', e => {
-        if (e.touches[0].clientX > window.innerWidth * 0.8) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // Cerrar menú al hacer click en un enlace
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
-            menuIcon.classList.add('bx-menu');
-        });
-    });
-
-    // Cerrar menú al hacer click fuera de él
-    document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-            navMenu.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
-            menuIcon.classList.add('bx-menu');
-        }
-    });
-
-    // Actualizar enlace activo al hacer scroll
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        const navHeight = document.querySelector('nav').offsetHeight;
         
-        document.querySelectorAll('section').forEach(section => {
-            const sectionTop = section.offsetTop - navHeight - 10;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                const currentId = section.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + currentId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+            navTitle.style.display = 'block'; // Mostramos el título
+            navTitle.style.opacity = '1';
+            navLinks.forEach((link, index) => {
+                setTimeout(() => {
+                    link.style.opacity = '1';
+                    link.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        } else {
+            document.body.style.overflow = '';
+            navTitle.style.display = 'none'; // Ocultamos el título
+            navLinks.forEach(link => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(20px)';
+            });
+        }
+    });
+
+    // Seguimiento del botón de menú durante el scroll
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        menuBtn.style.setProperty('--scroll-y', scrollY);
+        
+        if (scrollY > 100) {
+            menuBtn.classList.add('scrolled');
+        } else {
+            menuBtn.classList.remove('scrolled');
+        }
     });
 
     // Inicialización de Swiper
