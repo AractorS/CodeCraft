@@ -18,14 +18,19 @@
 </div>
 
 <nav>
-  <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">codecraft</span> solutions</h1>
-  <ul>
-    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#home">Inicio</a></li>
-    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">Acerca de</a></li>
-    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#projects">Proyectos</a></li>
-    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#skills">Habilidades</a></li>
-    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#contact">Contacto</a></li>
-  </ul>
+  <div class="container nav-flex">
+    <div class="nav-group nav-left">
+      <a href="#inicio">Inicio</a>
+      <a href="#acerca">Acerca de</a>
+    </div>
+    <div class="nav-title">
+      <h1><span style="color: #4acfee;">codecraft</span> solutions</h1>
+    </div>
+    <div class="nav-group nav-right">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
 </nav>
 <body>
 
@@ -38,9 +43,9 @@
 
     <div class="hero">
       <div class="hero-info">
-        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">Somos CodeCraft Solutions</h1>
-        <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">Desarrolladores</h2>
-        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">¡Bienvenido a CodeCraftSolutions! Transformamos tus ideas en proyectos innovadores, 
+        <h1 data-aos="fade-right" data-aos-duration="500">Somos CodeCraft Solutions</h1>
+        <h2 data-aos="fade-left" data-aos-duration="500">Desarrolladores</h2>
+        <p data-aos="flip-down" data-aos-duration="500">¡Bienvenido a CodeCraftSolutions! Transformamos tus ideas en proyectos innovadores, 
           y funcionales. Estamos aquí para darte el impulso que necesitas. Tu éxito es nuestra misión.</p>
         <div class="Buttons">
           <button class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contáctanos</button> 
@@ -53,7 +58,7 @@
       </div>
 
       <div class="hero-img" data-aos="zoom-in-left" data-aos-duration="2500">
-        <img src="imagenes/man1.png" alt="person-img" >
+        <img src="imagenes/mascota 1.png" alt="person-img" >
       </div>
     </div>
   </section>
@@ -318,8 +323,8 @@
                 <span>JavaScript</span>
               </div>
               <div class="skill-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
-                <i class='bx bxl-react'></i>
-                <span>React</span>
+                <i class='bx bxl-flutter'></i>
+                <span>Flutter</span>
               </div>
             </div>
           </div>
@@ -327,8 +332,8 @@
             <h3>Backend</h3>
             <div class="skill-grid">
               <div class="skill-card" data-aos="zoom-in" data-aos-duration="1000">
-                <i class='bx bxl-nodejs'></i>
-                <span>Node.js</span>
+                <i class='bx bxl-php'></i>
+                <span>PHP</span>
               </div>
               <div class="skill-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                 <i class='bx bxl-python'></i>
@@ -530,6 +535,22 @@
                 slidesPerView: 3,
             },
         }
+    });
+
+    const chatForm = document.getElementById('form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const titleInput = document.getElementById('title');
+
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const userMessage = {
+        name: nameInput.value,
+        email: emailInput.value,
+        title: titleInput.value
+      };
+      const botResponse = await getBotResponseAIMLAPI(userMessage);
+      addMessageToChat(botResponse, 'bot');
     });
   </script>
 </body>
